@@ -6,8 +6,8 @@ import cors from 'cors';
 
 // import authRouter from './auth/router.js';
 
-// import errorHandler from './middleware/error.js';
-// import notFound from './middleware/404.js';
+import errorHandler from './middleware/error.js';
+import notFound from './middleware/404.js';
 
 let app = express();
 
@@ -18,8 +18,8 @@ app.use(express.urlencoded({extended:true})); // req.body => from a form's key v
 
 // app.use(authRouter);
 
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 let server = false;
 
